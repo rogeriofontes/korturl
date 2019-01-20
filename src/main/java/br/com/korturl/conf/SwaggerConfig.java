@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package br.com.korturl.conf;
 
 import org.springframework.context.annotation.Bean;

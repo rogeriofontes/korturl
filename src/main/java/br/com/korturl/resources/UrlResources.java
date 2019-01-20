@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package br.com.korturl.resources;
 
 import javax.validation.Valid;
@@ -20,21 +23,39 @@ import br.com.korturl.resources.dto.ShortenUrlRequest;
 import br.com.korturl.resources.dto.ShortenUrlResponse;
 import br.com.korturl.service.UrlStoreService;
 
+/**
+ * The Class UrlResources.
+ */
 @RestController
 @RequestMapping(path = "/api/v1")
 public class UrlResources {
 
+	/** The Constant LOGGER. */
 	private static final Logger LOGGER = LogManager.getLogger(UrlResources.class);
 
+	/** The url store service. */
 	@Autowired
 	private UrlStoreService urlStoreService;
 
+	/**
+	 * Shorten url.
+	 *
+	 * @param shortenUrlDTO the shorten url DTO
+	 * @return the shorten url response
+	 */
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ShortenUrlResponse shortenUrl(@Valid @RequestBody ShortenUrlRequest shortenUrlDTO) {
 		LOGGER.info("Url: " + shortenUrlDTO.toString());
 		return urlStoreService.storeUrl(shortenUrlDTO);
 	}
 
+	/**
+	 * Redirect to url.
+	 *
+	 * @param key the key
+	 * @return the shorten url response
+	 * @throws Exception the exception
+	 */
 	@GetMapping(path = "/{key}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@CacheEvict(value = "urlsInCache", allEntries = true)
 	public ShortenUrlResponse redirectToUrl(@PathVariable String key) throws Exception {

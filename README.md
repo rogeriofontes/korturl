@@ -47,3 +47,14 @@ Call swagger Urls:
 http://localhost:8083/swagger-ui.html#/url-resources
 http://localhost:8083/v2/api-docs
 ```
+
+Used frameworks
+- Spring MVC
+- Spring Data JPA
+- Caffeine Cache
+- HikariCP
+- Swagger
+- Flyway
+- Lombok
+
+Next steps - FrontEnd in Angular or React, JWT.

@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package br.com.korturl.resources;
 
 import org.apache.logging.log4j.LogManager;
@@ -12,15 +15,26 @@ import br.com.korturl.constants.Contants;
 import br.com.korturl.exception.URLException;
 import br.com.korturl.service.UrlStaticsService;
 
+/**
+ * The Class UrlStaticsResources.
+ */
 @RestController
 @RequestMapping(path = "/api/v1")
 public class UrlStaticsResources {
 
+	/** The Constant LOGGER. */
 	private static final Logger LOGGER = LogManager.getLogger(UrlStaticsResources.class);
 
+	/** The url static service. */
 	@Autowired
 	private UrlStaticsService urlStaticService;
 
+	/**
+	 * Gets the statics.
+	 *
+	 * @return the statics
+	 * @throws Exception the exception
+	 */
 	@GetMapping(path = "/statistics", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Long getStatics() throws Exception {
 		final Long total = urlStaticService.countUrl();
