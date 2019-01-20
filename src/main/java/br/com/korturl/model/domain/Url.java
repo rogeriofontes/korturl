@@ -26,15 +26,14 @@ public class Url extends AudityEntity {
 
 	private static final long serialVersionUID = -2545117841829118399L;
 
-	@NotNull
+	@NotNull(message = "The field urlKey is required")
 	@Getter
 	@Setter
 	@Column(name = "url_key")
 	private String urlKey;
 	
-	@NotNull
+	@NotNull(message = "The field url is required")
 	@Getter
 	@Setter
-	private String url;
-
+	private String url;	
 }

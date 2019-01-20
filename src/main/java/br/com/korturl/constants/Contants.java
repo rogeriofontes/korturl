@@ -17,6 +17,9 @@ public class Contants {
 	/** The Constant URL_IS_NOT_VALID. */
 	public static final String URL_IS_NOT_VALID = "Url is not valid!";
 	
+	/** The Constant URL_FOUNDED. */
+	public static final String URL_FOUNDED = "Url is exists!";
+	
 	/** The Constant URL_IS_NOT_FOUND. */
 	public static final String URL_IS_NOT_FOUND = "Url not found!";
 	

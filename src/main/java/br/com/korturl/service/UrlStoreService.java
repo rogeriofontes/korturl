@@ -3,9 +3,11 @@
  */
 package br.com.korturl.service;
 
-import br.com.korturl.resources.dto.ShortenUrlRequest;
-import br.com.korturl.resources.dto.ShortenUrlResponse;
+import java.util.List;
 
+import br.com.korturl.model.domain.Url;
+
+// TODO: Auto-generated Javadoc
 /**
  * The Interface UrlStoreService.
  */
@@ -17,13 +19,36 @@ public interface UrlStoreService {
 	 * @param key the key
 	 * @return the shorten url response
 	 */
-	ShortenUrlResponse findUrlByShortId(String key);
+	Url findUrlByShortId(String key);
 	
 	/**
 	 * Store url.
 	 *
-	 * @param shortenUrlDTO the shorten url DTO
+	 * @param url the url
 	 * @return the shorten url response
 	 */
-	ShortenUrlResponse storeUrl(ShortenUrlRequest shortenUrlDTO);
+	Url storeUrl(Url url);
+	
+	/**
+	 * Save.
+	 *
+	 * @param url the url
+	 * @return the url
+	 */
+	Url save(Url url);
+	
+	/**
+	 * List all.
+	 *
+	 * @return the list
+	 */
+	List<Url> listAll();
+
+	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return the url
+	 */
+	Url findById(Long id);
 }

@@ -34,7 +34,7 @@ function fire_ajax_submit() {
     $.ajax({
         type: "POST",
         contentType: "application/json",
-        url: "/api/v1",
+        url: "/api/v1/urls",
         data: JSON.stringify(search),
         dataType: 'json',
         cache: false,
